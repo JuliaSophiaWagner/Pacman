@@ -38,7 +38,7 @@ var Server = /** @class */ (function () {
         this.ranking = new Array();
         this.app = express_1.default();
         this.app.use(this.logMiddleware.bind(this));
-        this.app.use(express_1.default.static(path.join(__dirname, './dist/pacman')));
+        this.app.use(express_1.default.static(path.join(__dirname, 'dist/pacman')));
         this.app.use(express_1.default.json());
         this.crypto = require('crypto');
         this.app.get('/scoreboard', function (req, res) {
@@ -53,7 +53,7 @@ var Server = /** @class */ (function () {
             });
         });
         this.app.get("*", function (req, res) {
-            res.sendFile(path.join(__dirname, "./dist/pacman", "index.html"));
+            res.sendFile(path.join(__dirname, "dist/pacman", "index.html"));
         });
         this.app.post('/signin', function (req, res) {
             var isValid = false;
